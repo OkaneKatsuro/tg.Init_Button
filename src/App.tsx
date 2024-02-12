@@ -33,13 +33,16 @@ const App = () => {
 
   return (
     <div>
-      <h1>init.data:</h1>
+      <h3>init.data: </h3>
       <div className="data-container">
         {userData ? (
           <div>
             <p>Username: {userData.username}</p>
             <p>First Name: {userData.first_name}</p>
             <p>Last Name: {userData.last_name}</p>
+            <p>Language code: {userData.language_code}</p>
+            <p>First Name: {userData.first_name}</p>
+            <p>Last Name: {userData.allows_write_to_pm}</p>
           </div>
         ) : (
           <p>No user data</p>
