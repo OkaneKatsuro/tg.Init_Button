@@ -24,7 +24,7 @@ const App = () => {
   const handleButtonClick = () => {
     const params = new URLSearchParams(initData);
 
-    const userJson = params.get("user");
+    const userJson = params.get("query_id");
     if (userJson) {
       const user = JSON.parse(decodeURIComponent(userJson));
       setUserData(user);
