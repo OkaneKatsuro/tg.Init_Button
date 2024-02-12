@@ -19,9 +19,9 @@ const App = () => {
     tg.expand();
   }, []);
 
-  const handleButtonClick = () => {
-    const initData = tg.initData;
+  const initData = tg.initData;
 
+  const handleButtonClick = () => {
     const params = new URLSearchParams(initData);
 
     const userJson = params.get("user");
@@ -34,6 +34,7 @@ const App = () => {
   return (
     <div>
       <h3>init.data: </h3>
+      <p>{initData}</p>
       <div className="data-container">
         {userData ? (
           <div>
