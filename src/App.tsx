@@ -4,7 +4,7 @@ import "./App.css";
 
 const App = () => {
   interface User {
-    user: number;
+    id: number;
     first_name: string;
     last_name: string;
     username: string;
@@ -39,7 +39,7 @@ const App = () => {
         {userData ? (
           <div>
             <p>{initData}</p>
-            <p>UserId: {userData.user}</p>
+            <p>UserId: {userData.id}</p>
             <p>Username: {userData.username}</p>
             <p>First Name: {userData.first_name}</p>
             <p>Last Name: {userData.last_name}</p>
