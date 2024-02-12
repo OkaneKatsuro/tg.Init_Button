@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div>
       <h1>init.data:</h1>
-      <p>fdsfdsf{initData}</p>
+      <div className="data-container">{initData}</div>
 
       <p></p>
       <button className="button" onClick={handleButtonClick}>
