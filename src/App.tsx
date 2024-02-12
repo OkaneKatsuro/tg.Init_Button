@@ -34,10 +34,11 @@ const App = () => {
   return (
     <div>
       <h3>init.data: </h3>
-      <p>{initData}</p>
+
       <div className="data-container">
         {userData ? (
           <div>
+            <p>{initData}</p>
             <p>Username: {userData.username}</p>
             <p>First Name: {userData.first_name}</p>
             <p>Last Name: {userData.last_name}</p>
