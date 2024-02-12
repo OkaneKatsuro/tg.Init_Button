@@ -40,13 +40,19 @@ const App = () => {
       <div className="data-container">
         {userData ? (
           <div>
-            <p>{initData}</p>
+            <p onClick={() => copyToClipboard(initData)}>{initData}</p>
             <p onClick={() => copyToClipboard(userData.username)}>
               Username: {userData.username}
             </p>
-            <p>First Name: {userData.first_name}</p>
-            <p>Last Name: {userData.last_name}</p>
-            <p>Language code: {userData.language_code}</p>
+            <p onClick={() => copyToClipboard(userData.first_name)}>
+              First Name: {userData.first_name}
+            </p>
+            <p onClick={() => copyToClipboard(userData.last_name)}>
+              Last Name: {userData.last_name}
+            </p>
+            <p onClick={() => copyToClipboard(userData.language_code)}>
+              Language code: {userData.language_code}
+            </p>
           </div>
         ) : (
           <p>No user data</p>
