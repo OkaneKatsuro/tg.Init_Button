@@ -4,12 +4,10 @@ import "./App.css";
 
 const App = () => {
   interface User {
-    id: number;
     first_name: string;
     last_name: string;
     username: string;
     language_code: string;
-    allows_write_to_pm: boolean;
   }
 
   const [userData, setUserData] = useState<User | null>(null);
@@ -24,11 +22,15 @@ const App = () => {
   const handleButtonClick = () => {
     const params = new URLSearchParams(initData);
 
-    const userJson = params.get("query_id");
+    const userJson = params.get("user");
     if (userJson) {
       const user = JSON.parse(decodeURIComponent(userJson));
       setUserData(user);
     }
+  };
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
   };
 
   return (
@@ -39,8 +41,9 @@ const App = () => {
         {userData ? (
           <div>
             <p>{initData}</p>
-            <p>UserId: {userData.id}</p>
-            <p>Username: {userData.username}</p>
+            <p onClick={() => copyToClipboard(userData.username)}>
+              Username: {userData.username}
+            </p>
             <p>First Name: {userData.first_name}</p>
             <p>Last Name: {userData.last_name}</p>
             <p>Language code: {userData.language_code}</p>
